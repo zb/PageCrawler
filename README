@@ -1,3 +1,5 @@
+DB userName/pass parameters are at the top of pagecrawler.db.DBFunctions
+
 CREATE DATABASE crawler;
 USE crawler;
 
