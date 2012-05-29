@@ -35,7 +35,7 @@ public class Crawler
 			// Create a HashMap of the tags included in the document and their count with the handleAllTags function.
 			HashMap<String, Integer> tagCount = HandleTagCount.handleAllTags(allTags);
 			
-			// Write the results of the HashMap to the popshops.htmlTags database.
+			// Write the results of the HashMap to the crawler.htmlTags database.
 			DBFunctions.writeHtmlTagsToDb(inputUrl, tagCount);
 			
 			// Use JSoup to pull the non-HTML text from the source before replacing any non-letter character with whitespace.
@@ -44,7 +44,7 @@ public class Crawler
 			// Create a HashMap of the words included in the document and their count with the countWords function.
 			HashMap<String, Integer> wordCount = HandleWordCount.countWords(text);
 			
-			// Write the results of the HashMap to the popshops.wordCount database.
+			// Write the results of the HashMap to the crawler.wordCount database.
 			DBFunctions.writeWordCountToDb(inputUrl, wordCount);
 			
 			//Rejoice.
