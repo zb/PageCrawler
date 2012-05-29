@@ -12,7 +12,7 @@ public class DBFunctions
 {	
 private static final String userName = "";
 private static final String pass = "";
-private static final String url = "jdbc:mysql://localhost/Crawler?jdbcCompliantTruncation=false";
+private static final String url = "jdbc:mysql://localhost/crawler?jdbcCompliantTruncation=false";
 	
 private static java.sql.Connection connect = null;
 private static java.sql.Statement statement = null;
