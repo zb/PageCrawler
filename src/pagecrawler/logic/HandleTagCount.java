@@ -21,9 +21,9 @@ public class HandleTagCount
 		{
 			count = StringUtils.countMatches(allTags, allHtmlTags[i]);
 			if (count > 0)
-				{				
-					htmlTagMap.put(allHtmlTags[i].replace("<", "").replace(">", ""), count);
-				}
+			{				
+				htmlTagMap.put(allHtmlTags[i].replace("<", "").replace(">", ""), count);
+			}
 		}				
 		return htmlTagMap;		
 	}	
