@@ -36,7 +36,7 @@ public static void writeHtmlTagsToDb(String siteUrl, HashMap<String, Integer> ta
 			Map.Entry me = (Map.Entry)i.next();
 			
 			statement = connect.createStatement();
-	       		int result = statement.executeUpdate("INSERT INTO crawler.htmlTags(url, tag, count) VALUE('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
+	       		int result = statement.executeUpdate("INSERT INTO crawler.htmlTags(url, tag, count) VALUES('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
 	        	        
 	        	statement.close();
 		}
@@ -70,7 +70,7 @@ public static void writeWordCountToDb(String siteUrl, HashMap<String, Integer> w
 			Map.Entry me = (Map.Entry)i.next();
 			
 			statement = connect.createStatement();
-	        	int result = statement.executeUpdate("INSERT INTO crawler.wordCount(url, word, count) VALUE('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
+	        	int result = statement.executeUpdate("INSERT INTO crawler.wordCount(url, word, count) VALUES('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
 	        	        
 	       		statement.close();
 		}
