@@ -4,13 +4,13 @@
               To include a user specific buildfile here, simply create one in the same
               directory with the processing instruction <?eclipse.ant.import?>
               as the first entry and export the buildfile again. -->
-<project basedir="." default="build" name="PopshopsWebCrawler">
+<project basedir="." default="build" name="PageCrawler">
     <property environment="env"/>
     <property name="ECLIPSE_HOME" value="../../../../../Applications/eclipse"/>
     <property name="debuglevel" value="source,lines,vars"/>
     <property name="target" value="1.6"/>
     <property name="source" value="1.6"/>
-    <path id="PopshopsWebCrawler.classpath">
+    <path id="PageCrawler.classpath">
         <pathelement location="bin"/>
         <pathelement location="lib/jsoup-1.6.2.jar"/>
         <pathelement location="lib/mysql-connector-java-5.1.20-bin.jar"/>
@@ -34,7 +34,7 @@
         <echo message="${ant.project.name}: ${ant.file}"/>
         <javac debug="true" debuglevel="${debuglevel}" destdir="bin" source="${source}" target="${target}">
             <src path="src"/>
-            <classpath refid="PopshopsWebCrawler.classpath"/>
+            <classpath refid="PageCrawler.classpath"/>
         </javac>
     </target>
     <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
@@ -52,19 +52,19 @@
         <antcall target="build"/>
     </target>
     <target name="Crawler">
-        <java classname="popshops.webcrawler.main.Crawler" failonerror="true" fork="yes">
+        <java classname="pagecrawler.main.Crawler" failonerror="true" fork="yes">
             <arg line="http://yahoo.com"/>
-            <classpath refid="PopshopsWebCrawler.classpath"/>
+            <classpath refid="PageCrawler.classpath"/>
         </java>
     </target>
     <target name="WordCount">
-        <java classname="popshops.webcrawler.main.WordCount" failonerror="true" fork="yes">
-            <classpath refid="PopshopsWebCrawler.classpath"/>
+        <java classname="pagecrawler.main.WordCount" failonerror="true" fork="yes">
+            <classpath refid="PageCrawler.classpath"/>
         </java>
     </target>
     <target name="WordCount (1)">
-        <java classname="popshops.webcrawler.logic.WordCount" failonerror="true" fork="yes">
-            <classpath refid="PopshopsWebCrawler.classpath"/>
+        <java classname="pagecrawler.logic.WordCount" failonerror="true" fork="yes">
+            <classpath refid="PageCrawler.classpath"/>
         </java>
     </target>
 </project>
