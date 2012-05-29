@@ -1,0 +1,21 @@
+CREATE DATABASE crawler;
+USE crawler;
+
+CREATE TABLE htmlTags
+(
+url varchar(255),
+tag varchar(10),
+count smallint,
+updated    TIMESTAMP NOT NULL
+           	DEFAULT CURRENT_TIMESTAMP
+          	ON UPDATE CURRENT_TIMESTAMP);
+
+
+CREATE TABLE wordCount
+(
+url varchar(255),
+word varchar(50),
+count smallint,
+updated    TIMESTAMP NOT NULL
+           	DEFAULT CURRENT_TIMESTAMP
+           	ON UPDATE CURRENT_TIMESTAMP);
