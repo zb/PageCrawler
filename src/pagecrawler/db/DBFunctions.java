@@ -12,7 +12,7 @@ public class DBFunctions
 {	
 private static final String userName = "";
 private static final String pass = "";
-private static final String url = "jdbc:mysql://localhost/Crawler?jdbcCompliantTruncation=false";
+private static final String url = "jdbc:mysql://localhost/crawler?jdbcCompliantTruncation=false";
 	
 private static java.sql.Connection connect = null;
 private static java.sql.Statement statement = null;
@@ -25,9 +25,9 @@ public static void writeHtmlTagsToDb(String siteUrl, HashMap<String, Integer> ta
 	{
 		
 		Class.forName("com.mysql.jdbc.Driver");
-        connect = DriverManager.getConnection(url, userName, pass);
+       		connect = DriverManager.getConnection(url, userName, pass);
         
-        Set<?> set = tagCount.entrySet();
+      		Set<?> set = tagCount.entrySet();
 
 		Iterator<?> i = set.iterator();		
 		
@@ -36,9 +36,9 @@ public static void writeHtmlTagsToDb(String siteUrl, HashMap<String, Integer> ta
 			Map.Entry me = (Map.Entry)i.next();
 			
 			statement = connect.createStatement();
-	        int result = statement.executeUpdate("INSERT INTO Crawler.htmlTags(url, tag, count) VALUE('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
+	       		int result = statement.executeUpdate("INSERT INTO crawler.htmlTags(url, tag, count) VALUES('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
 	        	        
-	        statement.close();
+	        	statement.close();
 		}
 		System.out.println("HTML tag count write completed.");
 	} 
@@ -59,9 +59,9 @@ public static void writeWordCountToDb(String siteUrl, HashMap<String, Integer> w
 	try 
 	{
 		Class.forName("com.mysql.jdbc.Driver");
-        connect = DriverManager.getConnection(url, userName, pass);
+       		connect = DriverManager.getConnection(url, userName, pass);
         
-        Set<?> set = wordCount.entrySet();
+        	Set<?> set = wordCount.entrySet();
 
 		Iterator<?> i = set.iterator();		
 		
@@ -70,9 +70,9 @@ public static void writeWordCountToDb(String siteUrl, HashMap<String, Integer> w
 			Map.Entry me = (Map.Entry)i.next();
 			
 			statement = connect.createStatement();
-	        int result = statement.executeUpdate("INSERT INTO Crawler.wordCount(url, word, count) VALUE('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
+	        	int result = statement.executeUpdate("INSERT INTO crawler.wordCount(url, word, count) VALUES('" + siteUrl +  "', '" + me.getKey() + "', " + me.getValue() + ")");
 	        	        
-	        statement.close();
+	       		statement.close();
 		}
 		System.out.println("Word count write completed.");
 	} 
