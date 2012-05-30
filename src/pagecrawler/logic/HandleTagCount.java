@@ -7,11 +7,14 @@ import org.apache.commons.lang3.StringUtils;
 
 public class HandleTagCount 
 {	
-	static String[] allHtmlTags = {"<address", "<applet", "<area", "<a ", "<base>", "<basefont", "<big", "<blockquote", "<body", "<br", "<b>", "<caption", "<center",
-			"<cite", "<code", "<dd", "<dfn", "<dir", "<div", "<dl", "<dt", "<em", "<font", "<form", "<h1", "<h2", "<h3", "<h4", "<h5", "<h6", "<head", "<hr",
-			"<html", "<img", "<input", "<isindex", "<i>", "<kbd", "<link", "<li>", "<map", "<menu", "<meta", "<ol", "<option", "<param", "<pre", "<p>", "<samp",
-			"<script", "<select", "<small", "<strike", "<strong", "<style", "<sub", "<sup", "<table", "<td", "<textarea", "<th", "<title", "<tr", "<tt", "<ul", "<u>", "<var"};  
-						
+static String[] allHtmlTags = { "<a ","<abbr", "<address", "<area", "<article", "<aside", "<audio", "<b>", "<base>", "<bdi", "<bdo", "<blockquote", "<body", "<br", 
+		"<button", "<canvas", "<caption", "<cite", "<code", "<col>", "<colgroup", "<command", "<datalist", "<dd", "<del", "<details", "<dfn", "<div", "<dl", 
+		"<dt", "<em", "<embed", "<fieldset","<figcaption", "figure", "<footer", "<form", "<h1", "<h2", "<h3", "<h4", "<h5", "<h6", "<head>", "<header", "<hrgroup",
+		"<hr", "<html", "<i>", "<iframe", "<img", "<input", "<ins", "<keygen", "<kbd", "<label", "<legend", "<link", "<li>", "<map", "<mark", "<menu", "<meta", "<meter",
+		"<nav", "<noscript", "<object", "<ol", "<optgroup", "<option", "<output", "<p>", "<param", "<pre", "<progress", "<q", "<rp", "<rt", "<ruby", "<s>", "<samp",
+		"<script", "<select", "<small", "<source", "<span", "<strong", "<style", "<sub", "<summary", "<sup", "<table", "<tbody", "<td", "<textarea", "<tfoot", "<th>", 
+		"<thead", "<time", "<title", "<tr>", "<track", "<u>", "<ul", "<var", "<video", "<wbr"};  
+			
 	public static HashMap<String, Integer> handleAllTags(String allTags)
 	{				
 		HashMap<String, Integer> htmlTagMap = new HashMap<String, Integer>();
