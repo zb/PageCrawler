@@ -39,7 +39,7 @@ public class Crawler
 			DBFunctions.writeHtmlTagsToDb(inputUrl, tagCount);
 			
 			// Use JSoup to pull the non-HTML text from the source before replacing any non-letter character with whitespace.
-			String text = doc.body().text().replaceAll("'", "\'").replaceAll("[^A-Za-z]", " ");
+			String text = doc.body().text().replaceAll("[^A-Za-z']", " ").replaceAll("'", "''");
 			
 			// Create a HashMap of the words included in the document and their count with the countWords function.
 			HashMap<String, Integer> wordCount = HandleWordCount.countWords(text);
